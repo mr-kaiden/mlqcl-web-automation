@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="485255d2-948e-4f3f-91b4-67920dad43c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/TestSuiteRunner/TestingSuiteRunner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dto/accountCredential.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dto/accountCredential.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mlhuillier/qcl/pageObject/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mlhuillier/qcl/pageObject/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mlhuillier/qcl/testSteps/QCLWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mlhuillier/qcl/testSteps/QCLWeb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mlhuillier/qcl/testSteps/testExecution/TestExecutionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mlhuillier/qcl/testSteps/testExecution/TestExecutionUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mlhuillier/qcl/utilities/TOTPGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mlhuillier/qcl/utilities/TOTPGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/mlhuillier/qcl/testScripts/QCLWebScripts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mlhuillier/qcl/testScripts/QCLWebScripts.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
