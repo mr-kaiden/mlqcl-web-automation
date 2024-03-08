@@ -1,5 +1,6 @@
 package mlhuillier.qcl.pageObject;
 
+
 import org.openqa.selenium.By;
 
 public class LoginPage {
@@ -19,6 +20,28 @@ public class LoginPage {
         public static By input_back_up_codes_google = By.xpath("//*[@type= 'tel']");
 
         public static By LoginText = By.xpath("//*[contains(text(), 'Login')]");
+
+
+
+
+
+//        Preda
+
+        public static By Dashboard = By.xpath ( "//*[contains(text(), 'Dashboard')]" );
+
+        public static By objPNavigation = By.xpath ( "//*[@id='__next']/aside/div/div[2]/button[1]" );
+
+        public static By objQCLL = By.xpath ( "//*[@id='__next']/div/div/div[1]/div/div[2]/h1" );
+
+        public static By objcontinue =  By.xpath ( "//*[@id='__next']//span" );
+
+        public static By objprendadetails = By.xpath ( "//*[@id='headlessui-disclosure-button-:rk:']/span" );
+        public static By objbranchdetail =  By.xpath ( "//*[contains(text(), 'Branch: ')]" );
+        public static By objContactDetails =  By.xpath ( "//*[contains(text(), 'Customer Name')]" );
+        public static By objDateGranted =  By.xpath ( "//*[contains(text(), 'Date Loan Granted')]" );
+        public static By objMaturityDate =  By.xpath ( "//*[contains(text(), 'Maturity Date')]" );
+        public static By objExpireDate =  By.xpath ( "//*[contains(text(), 'Expiry Date')]" );
+
 
     }
 

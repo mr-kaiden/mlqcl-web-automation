@@ -34,29 +34,33 @@ public class TestExecutionUtils extends BaseClass {
         waitTime(2000);
         type(LoginPage.password_google, accountCredential.getproperty("password"), "password inputted");
         click(LoginPage.nextBtn_google, "next btn");
-        waitTime(5000);
-        scrollToBottomOfPageWEB();
-        verifyElementPresentAndClick(LoginPage.try_another_way_google, "another way option");
+//        waitTime(5000);
+//        scrollToBottomOfPageWEB();
+//        verifyElementPresentAndClick(LoginPage.try_another_way_google, "another way option");
         waitTime(4000);
         scrollToBottomOfPageWEB();
-        verifyElementPresentAndClick(LoginPage.enter_back_up_codes_google, "Authenticator");
+        click (LoginPage.enter_back_up_codes_google, "Authenticator");
+//        verifyElementPresentAndClick(LoginPage.enter_back_up_codes_google, "Authenticator");
         waitTime(2000);
         verifyElementPresent(LoginPage.input_back_up_codes_google, "backup code input text");
         waitTime(2000);
         driver.findElement(LoginPage.input_back_up_codes_google).sendKeys( TOTPGenerator.getTwoFactorCode());
         click(LoginPage.nextBtn_google, "next btn");
+        waitTime(2000);
     }
 
     public static void signInQCL() throws Exception {
-        waitTime(2000);
+
         driver.switchTo().window(originalWindowHandle);
         verifyElementPresent(LoginPage.LoginText, "Login Page Header");
-        waitTime(8000);
         click(LoginPage.kpxusername, "usernamme");
         type(LoginPage.kpxusername, accountCredential.getproperty("kpxusername"), "username inputted");
         click(LoginPage.kpxpassword, "kpxpassword");
         type(LoginPage.kpxpassword, accountCredential.getproperty("kpxpassword"), "password inputted");
         click(LoginPage.kpxlogind, "click login");
     }
+
+
+
 }
 

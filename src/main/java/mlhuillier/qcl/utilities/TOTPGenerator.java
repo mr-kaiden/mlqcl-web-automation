@@ -7,7 +7,7 @@ import static mlhuillier.qcl.testSteps.BaseClass.accountCredential;
 public class TOTPGenerator {
 
     public static String getTwoFactorCode(){
-        Totp totp = new Totp("add here the google token");
+        Totp totp = new Totp("k6rdspzjlno3xkxdyhtzqjihoodkvdx6");
         String twoFactorCode = totp.now();
         return twoFactorCode;
     }
