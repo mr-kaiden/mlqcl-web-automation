@@ -7,7 +7,7 @@ import static mlhuillier.qcl.testSteps.BaseClass.accountCredential;
 public class TOTPGenerator {
 
     public static String getTwoFactorCode(){
-        Totp totp = new Totp("k6rdspzjlno3xkxdyhtzqjihoodkvdx6");
+        Totp totp = new Totp(accountCredential.getproperty ("emailtoken"));
         String twoFactorCode = totp.now();
         return twoFactorCode;
     }

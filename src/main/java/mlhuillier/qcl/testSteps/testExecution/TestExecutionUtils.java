@@ -34,9 +34,9 @@ public class TestExecutionUtils extends BaseClass {
         waitTime(2000);
         type(LoginPage.password_google, accountCredential.getproperty("password"), "password inputted");
         click(LoginPage.nextBtn_google, "next btn");
-//        waitTime(5000);
-//        scrollToBottomOfPageWEB();
-//        verifyElementPresentAndClick(LoginPage.try_another_way_google, "another way option");
+        waitTime(5000);
+        scrollToBottomOfPageWEB();
+        verifyElementPresentAndClick(LoginPage.try_another_way_google, "another way option");
         waitTime(4000);
         scrollToBottomOfPageWEB();
         click (LoginPage.enter_back_up_codes_google, "Authenticator");
