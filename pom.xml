@@ -312,7 +312,7 @@
           <properties>
             <property>
               <name>groups</name>
-              <value>Regression,Transactional,HappyPath,Test</value>
+              <value>Regression,Transactional,HappyPath,Test, Negative</value>
             </property>
           </properties>
         </configuration>

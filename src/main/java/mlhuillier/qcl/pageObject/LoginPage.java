@@ -18,11 +18,8 @@ public class LoginPage {
         public static By try_another_way_google = By.xpath("//span[contains(text(), 'Try another way')]");
         public static By enter_back_up_codes_google = By.xpath("//*[contains(text(), 'Google Authenticator')]");
         public static By input_back_up_codes_google = By.xpath("//*[@type= 'tel']");
-
         public static By LoginText = By.xpath("//*[contains(text(), 'Login')]");
-
-
-
+        public static By invalid_login_credential = By.xpath("//*[@id='swal2-content']/h5");
 
 
 //        Preda
