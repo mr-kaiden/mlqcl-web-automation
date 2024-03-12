@@ -309,12 +309,13 @@
             <suiteXmlFile>src/test/resources/TestSuiteRunner/HappyPathSuiteRunner.xml</suiteXmlFile>
 <!--            <suiteXmlFile>src/test/resources/TestSuiteRunner/TestingSuiteRunner.xml</suiteXmlFile>-->
           </suiteXmlFiles>
-          <properties>
-            <property>
-              <name>groups</name>
-              <value>Regression,Transactional,HappyPath,Test, Negative</value>
-            </property>
-          </properties>
+          <groups>${group}</groups>
+<!--          <properties>-->
+<!--            <property>-->
+<!--              <name>groups</name>-->
+<!--              <value>Regression,Transactional,HappyPath,Test, Negative</value>-->
+<!--            </property>-->
+<!--          </properties>-->
         </configuration>
       </plugin>
     </plugins>
