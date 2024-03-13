@@ -9,6 +9,7 @@ import mlhuillier.qcl.utilities.LoggingUtils;
 import org.testng.asserts.SoftAssert;
 import mlhuillier.qcl.testSteps.QCLWeb;
 import mlhuillier.qcl.testSteps.Lukat;
+import mlhuillier.qcl.testSteps.PrendaTestSteps;
 import mlhuillier.qcl.testSteps.testExecution.TestExecutionUtils;
 
 
@@ -20,6 +21,8 @@ public class BaseTest {
 
     protected QCLWeb QCLWeb;
     protected Lukat Lukat;
+
+    protected PrendaTestSteps PrendaTestSteps;
     protected TestExecutionUtils TestExecutionUtils;
 
     public static ExtentTest testLogger;
@@ -60,6 +63,7 @@ public class BaseTest {
         TestExecutionUtils = new TestExecutionUtils();
         QCLWeb = new QCLWeb();
         Lukat = new Lukat();
+        PrendaTestSteps = new PrendaTestSteps();
         propertyFileReader();
         accountCredentialReader();
         softAssert = new SoftAssert();
