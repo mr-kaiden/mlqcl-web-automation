@@ -2,6 +2,8 @@ package mlhuillier.qcl.testSteps;
 
 import mlhuillier.qcl.pageObject.LoginPage;
 import mlhuillier.qcl.testSteps.testExecution.TestExecutionUtils;
+import mlhuillier.qcl.pageObject.lukat.lukatPage;
+
 
 import static mlhuillier.qcl.utilities.ExtentReporter.HeaderChildNode;
 import static mlhuillier.qcl.utilities.Utilities.*;
@@ -65,6 +67,5 @@ public class QCLWeb extends BaseClass{
         verifyElementPresent ( LoginPage.objExpireDate, "Expiry Date" );
         extentLoggerPass("", "To verify Prenda module validated");
     }
-
 
 }

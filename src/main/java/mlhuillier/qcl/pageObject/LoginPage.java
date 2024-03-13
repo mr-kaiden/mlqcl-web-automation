@@ -22,7 +22,7 @@ public class LoginPage {
         public static By invalid_login_credential = By.xpath("//*[@id='swal2-content']/h5");
 
 
-//        Preda
+//        Prenda
 
         public static By Dashboard = By.xpath ( "//*[contains(text(), 'Dashboard')]" );
 
@@ -39,6 +39,5 @@ public class LoginPage {
         public static By objMaturityDate =  By.xpath ( "//*[contains(text(), 'Maturity Date')]" );
         public static By objExpireDate =  By.xpath ( "//*[contains(text(), 'Expiry Date')]" );
 
-
-    }
+}
 

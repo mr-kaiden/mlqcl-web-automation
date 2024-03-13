@@ -27,12 +27,16 @@ public class QCLWebScripts extends BaseTest{
 
     }
 
-    @Test(priority = 1, groups = "Test")
+    @Test(priority = 1, groups = "HappyPath")
     public void toVerifyPrendaModule() throws  Exception {
         QCLWeb.toVerifyPrendaModule ();
 
     }
 
+    @Test(priority = 1, groups = "Test")
+    public void toVerifyLukatModule() throws Exception{
+        Lukat.toVerifyLukatModule();
+    }
 
 
 }
