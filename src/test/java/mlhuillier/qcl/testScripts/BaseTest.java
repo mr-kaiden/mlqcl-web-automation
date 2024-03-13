@@ -8,6 +8,7 @@ import mlhuillier.qcl.utilities.propertyfilereader.PropertyFileReader;
 import mlhuillier.qcl.utilities.LoggingUtils;
 import org.testng.asserts.SoftAssert;
 import mlhuillier.qcl.testSteps.QCLWeb;
+import mlhuillier.qcl.testSteps.Lukat;
 import mlhuillier.qcl.testSteps.testExecution.TestExecutionUtils;
 
 
@@ -18,6 +19,7 @@ public class BaseTest {
     protected mlhuillier.qcl.testSteps.BaseClass baseClass;
 
     protected QCLWeb QCLWeb;
+    protected Lukat Lukat;
     protected TestExecutionUtils TestExecutionUtils;
 
     public static ExtentTest testLogger;
@@ -57,6 +59,7 @@ public class BaseTest {
         baseClass = new BaseClass("qcl", deviceName, portno);
         TestExecutionUtils = new TestExecutionUtils();
         QCLWeb = new QCLWeb();
+        Lukat = new Lukat();
         propertyFileReader();
         accountCredentialReader();
         softAssert = new SoftAssert();
