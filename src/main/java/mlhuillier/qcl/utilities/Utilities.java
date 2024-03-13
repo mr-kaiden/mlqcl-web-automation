@@ -1,5 +1,6 @@
 package mlhuillier.qcl.utilities;
 
+import mlhuillier.qcl.pageObject.renew.renewPage;
 import mlhuillier.qcl.utilities.driverInstance.DriverInstance;
 import mlhuillier.qcl.utilities.driverInstance.DriverManager;
 import com.google.common.collect.Ordering;
@@ -42,6 +43,7 @@ import java.util.concurrent.TimeUnit;
 
 import static mlhuillier.qcl.utilities.driverInstance.DriverInstance.tlWebDriver;
 import static java.awt.event.KeyEvent.VK_CONTROL;
+import org.openqa.selenium.JavascriptExecutor;
 
 public class Utilities extends ExtentReporter {
 
@@ -3877,6 +3879,40 @@ public class Utilities extends ExtentReporter {
         } catch (Exception e) {
             logger.error(e);
         }
+    }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public static void tenderAmount() throws Exception {
+
+        String transaction = String.valueOf(DisableFiled(renewPage.transactionnAmount));
+
+        System.out.println("Transaction Amount is =" +"(" + transaction + ").");
+//        click(By.xpath(tenderField), "Tender Input Field");
+        waitTime(2000);
+        click(renewPage.tenderAmount,"Tender Input Field");
+        type(renewPage.tenderAmount,transaction,"Tender Amount");
+
+    }
+
+    public static String DisableFiled(By byLocator) throws Exception{
+        WebElement element = getWebDriver().findElement(byLocator);
+        System.out.println(element);
+
+        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+        // Check if the text field is already enabled
+        boolean isEnabled = element.isEnabled();
+        if (isEnabled) {
+            // Text field is already enabled, get the value using getAttribute()
+            waitTime(2000);
+            String value = element.getAttribute("value");
+            return value;
+        } else {
+            // Enable the text field using JavaScript
+            js.executeScript("arguments[0].removeAttribute('disabled');", element);
+            waitTime(2000);
+            String value = element.getAttribute("value");
+            return value;
+        }
+
     }
 
 }

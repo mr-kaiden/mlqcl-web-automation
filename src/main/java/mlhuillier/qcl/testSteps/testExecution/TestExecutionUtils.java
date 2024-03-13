@@ -29,14 +29,20 @@ public class TestExecutionUtils extends BaseClass {
         waitTime(2000);
         type(LoginPage.password_google, password, "password inputted");
         click(LoginPage.nextBtn_google, "next btn");
-        waitTime(5000);
-        scrollToBottomOfPageWEB();
-        verifyElementPresentAndClick(LoginPage.try_another_way_google, "another way option");
-        waitTime(4000);
-        scrollToBottomOfPageWEB();
-        click (LoginPage.enter_back_up_codes_google, "Authenticator");
+
+        if(verifyElementPresent(LoginPage.fieldAttempts,"Error Message")){
+            waitTime(5000);
+            scrollToBottomOfPageWEB();
+            click (LoginPage.enter_back_up_codes_google, "Authenticator");
+
+        }else {
+            verifyElementPresentAndClick(LoginPage.try_another_way_google, "another way option");
+            waitTime(4000);
+            scrollToBottomOfPageWEB();
+            click(LoginPage.enter_back_up_codes_google, "Authenticator");
 //        verifyElementPresentAndClick(LoginPage.enter_back_up_codes_google, "Authenticator");
-        waitTime(2000);
+            waitTime(2000);
+        }
         verifyElementPresent(LoginPage.input_back_up_codes_google, "backup code input text");
         waitTime(2000);
         driver.findElement(LoginPage.input_back_up_codes_google).sendKeys( TOTPGenerator.getTwoFactorCode());

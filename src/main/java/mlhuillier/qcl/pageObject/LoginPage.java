@@ -22,9 +22,10 @@ public class LoginPage {
         public static By invalid_login_credential = By.xpath("//*[@id='swal2-content']/h5");
 
 
-//        Prenda
+        public static By fieldAttempts = By.xpath("//*[contains(text(),'Too many failed attempts')]");
+//        Preda
 
-        public static By Dashboard = By.xpath ( "//*[contains(text(), 'Dashboard')]" );
+        public static By Dashboard = By.xpath ( "(//*[contains(text(), 'Dashboard')])[2]" );
 
         public static By objPNavigation = By.xpath ( "//*[@id='__next']/aside/div/div[2]/button[1]" );
 

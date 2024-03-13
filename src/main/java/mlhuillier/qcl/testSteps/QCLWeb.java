@@ -1,6 +1,7 @@
 package mlhuillier.qcl.testSteps;
 
 import mlhuillier.qcl.pageObject.LoginPage;
+import mlhuillier.qcl.pageObject.renew.renewPage;
 import mlhuillier.qcl.testSteps.testExecution.TestExecutionUtils;
 import mlhuillier.qcl.pageObject.lukat.lukatPage;
 
