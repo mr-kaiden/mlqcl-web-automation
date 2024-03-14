@@ -13,9 +13,14 @@ public class QCLWebScripts extends BaseTest{
 
     }
 
-    @Test(priority = 1, groups = "Test")
-    public void toVerifyLukatModule() throws Exception{
-        Lukat.toVerifyLukatModule();
+//    @Test(priority = 1, groups = "Test")
+//    public void toVerifyLukatModule() throws Exception{
+//        Lukat.toVerifyLukatModule();
+//    }
+
+    @Test(priority = 2, groups = "Test")
+    public void toVerifyLukatTxnFunctionality() throws Exception{
+        Lukat.toVerifyLukatTxnFunctionality();
     }
 
 
