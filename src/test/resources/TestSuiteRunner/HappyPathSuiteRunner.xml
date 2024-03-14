@@ -17,8 +17,10 @@
             </run>
         </groups>
         <classes>
-            <class name="mlhuillier.qcl.testScripts.QCLWebScripts">
-            </class>
+            <class name="mlhuillier.qcl.testScripts.QCLWebScripts"/>
+            <class name="mlhuillier.qcl.testScripts.LogInTestScripts"/>
+            <class name="mlhuillier.qcl.testScripts.PrendaScripts"/>
+            <class name="mlhuillier.qcl.testScripts.RenewTestScript"/>
         </classes>
     </test>
 </suite>
