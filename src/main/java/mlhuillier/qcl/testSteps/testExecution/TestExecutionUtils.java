@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 import static mlhuillier.qcl.testSteps.BaseClass.accountCredential;
 import static mlhuillier.qcl.utilities.Utilities.*;
+import static mlhuillier.qcl.utilities.Utilities.verifyElementPresentAndClick;
 
 public class TestExecutionUtils extends BaseClass {
     public static WebDriver driver = getWebDriver();
@@ -29,20 +30,32 @@ public class TestExecutionUtils extends BaseClass {
         waitTime(2000);
         type(LoginPage.password_google, password, "password inputted");
         click(LoginPage.nextBtn_google, "next btn");
-
-        if(verifyElementPresent(LoginPage.fieldAttempts,"Error Message")){
-            waitTime(5000);
-            scrollToBottomOfPageWEB();
-            click (LoginPage.enter_back_up_codes_google, "Authenticator");
-
-        }else {
-            verifyElementPresentAndClick(LoginPage.try_another_way_google, "another way option");
-            waitTime(4000);
-            scrollToBottomOfPageWEB();
-            click(LoginPage.enter_back_up_codes_google, "Authenticator");
-//        verifyElementPresentAndClick(LoginPage.enter_back_up_codes_google, "Authenticator");
-            waitTime(2000);
+//        scrollToBottomOfPageWEB ();
+        if(verifyElementPresent ( LoginPage.try_another_way_google, "another way option" )){
+            click (LoginPage.try_another_way_google, "another way option");
+            verifyElementPresentAndClick(LoginPage.enter_back_up_codes_google, " Google Authenticator");
+        }else{
+            verifyElementPresentAndClick(LoginPage.enter_back_up_codes_google, " Google Authenticator");
         }
+
+//
+//
+//
+//        if(verifyElementPresent(LoginPage.fieldAttempts,"Error Message")){
+//            waitTime(5000);
+//            scrollToBottomOfPageWEB();
+//            click (LoginPage.enter_back_up_codes_google, "Authenticator");
+//
+//        }else {
+//            verifyElementPresentAndClick(LoginPage.try_another_way_google, "another way option");
+//            waitTime(4000);
+//            scrollToBottomOfPageWEB();
+//            click(LoginPage.enter_back_up_codes_google, "Authenticator");
+////        verifyElementPresentAndClick(LoginPage.enter_back_up_codes_google, "Authenticator");
+//            waitTime(2000);
+//        }
+
+
         verifyElementPresent(LoginPage.input_back_up_codes_google, "backup code input text");
         waitTime(2000);
         driver.findElement(LoginPage.input_back_up_codes_google).sendKeys( TOTPGenerator.getTwoFactorCode());
