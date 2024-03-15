@@ -1695,8 +1695,10 @@ public class Utilities extends ExtentReporter {
 	 * Function to scroll down
 	 */
 	public static void scrollDownWEB() {
-		js = (JavascriptExecutor) DriverManager.getDriver();
-		js.executeScript("window.scrollBy(0,250)", "");
+//		js = (JavascriptExecutor) DriverManager.getDriver();
+//		js.executeScript("window.scrollBy(0,250)", "");
+        Actions actions = new Actions(getWebDriver());
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
 	}
 
 	/**
@@ -3883,13 +3885,29 @@ public class Utilities extends ExtentReporter {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public static void tenderAmount() throws Exception {
 
-        String transaction = String.valueOf(DisableFiled(renewPage.transactionnAmount));
+        String transaction = String.valueOf(DisableFiled(renewPage.objTransactionsAmount));
 
         System.out.println("Transaction Amount is =" +"(" + transaction + ").");
 //        click(By.xpath(tenderField), "Tender Input Field");
-        waitTime(2000);
-        click(renewPage.tenderAmount,"Tender Input Field");
-        type(renewPage.tenderAmount,transaction,"Tender Amount");
+        waitTime(1000);
+        scrollDownWEB();
+        click(renewPage.objTenderAmount,"Tender Input Field");
+        type(renewPage.objTenderAmount,transaction,"Tender Amount");
+
+    }
+    public static void invalidTenderAmount() throws Exception {
+
+        String transaction = String.valueOf(DisableFiled(renewPage.objTransactionsAmount));
+        float num = 1;
+        float transactionAmount = Float.parseFloat(transaction) - num ;
+        String invalidTender = Float.toString(transactionAmount);
+
+        System.out.println("Transaction Amount is =" +"(" + invalidTender + ").");
+//        click(By.xpath(tenderField), "Tender Input Field");
+        waitTime(1000);
+        scrollDownWEB();
+        click(renewPage.objTenderAmount,"Tender Input Field");
+        type(renewPage.objTenderAmount,invalidTender,"Tender Amount");
 
     }
 
