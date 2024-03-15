@@ -10,7 +10,7 @@ import static mlhuillier.qcl.utilities.ExtentReporter.extentLoggerPass;
 import static mlhuillier.qcl.utilities.Utilities.*;
 import static mlhuillier.qcl.utilities.Utilities.click;
 
-public class RenewTestSteps extends BaseClass  {
+public class      RenewTestSteps extends BaseClass  {
 
     public void toValidateRenewTransaction() throws Exception {
         HeaderChildNode("To verify Renew Transaction");

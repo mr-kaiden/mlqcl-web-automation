@@ -209,7 +209,7 @@ public class ExtentReporter implements ITestListener {
 				e.printStackTrace();
 			}
 			childTest.get().log(Status.FAIL, result.getName() + " is FAILED ");
-			logger.info("::::::::::Test " + result.getName() + " FAILED::::::::::");
+			logger.info(":::adfasd:::::::Test " + result.getName() + " FAILED::::::::::");
 			moduleFail.add(result.getName()+","+"Fail");
 			totalFailedTest++;
 		}
