@@ -160,22 +160,22 @@ public class ExtentReporter implements ITestListener {
 	@Override
 	public synchronized void onTestStart(ITestResult result) {
 
-//		test=extent.createTest(result.getMethod().getMethodName());
-//		extentTest.set(test);
-//		handler=new PropertyFileReader("properties/ExecutionControl.properties");
-//		String testName=result.getTestContext().getName();
-//		if(handler.getproperty(testName).equals("Y")) {
+		test=extent.createTest(result.getMethod().getMethodName());
+		extentTest.set(test);
+		handler=new PropertyFileReader("properties/ExecutionControl.properties");
+		String testName=result.getTestContext().getName();
+		if(handler.getproperty(testName).equals("Y")) {
 			DriverInstance.methodName = result.getName();
 			ExcelUpdate.ModuleName = result.getName();
 			logger.info(":::::::::Testasdfsdafasdfasdf " + result.getName() + " Started::::::::");
 			totalTests++;
 			ExcelUpdate.passCounter = ExcelUpdate.failCounter = ExcelUpdate.warningCounter = moduleFailCount = 0;
-//		}
-//		else {
-//			logger.info("RunMode is :: No : "+ testName +" Test is Skipped");
-//			startTest = false;
-//			throw new SkipException(testName + " : Test Skipped ");
-//		}
+		}
+		else {
+			logger.info("RunMode is :: No : "+ testName +" Test is Skipped");
+			startTest = false;
+			throw new SkipException(testName + " : Test Skipped ");
+		}
 	}
 
 	@Override
@@ -186,7 +186,7 @@ public class ExtentReporter implements ITestListener {
 			e.printStackTrace();
 		}
 		childTest.get().log(Status.PASS, result.getName() + " is PASSED");
-		logger.info("::::::::::ahdsfhasdjfhajksdhfTest " + result.getName() + " PASSED::::::::::");
+		logger.info("::::::::::Test " + result.getName() + " PASSED::::::::::");
 		if(moduleFailCount == 0) {
 		moduleFail.add(result.getName()+","+"Pass");
 		}else {
@@ -209,7 +209,7 @@ public class ExtentReporter implements ITestListener {
 				e.printStackTrace();
 			}
 			childTest.get().log(Status.FAIL, result.getName() + " is FAILED ");
-			logger.info(":::adfasd:::::::Test " + result.getName() + " FAILED::::::::::");
+			logger.info("::::::::::Test " + result.getName() + " FAILED::::::::::");
 			moduleFail.add(result.getName()+","+"Fail");
 			totalFailedTest++;
 		}
