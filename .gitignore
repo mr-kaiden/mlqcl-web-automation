@@ -39,5 +39,8 @@ build/
 ## Delete all the reports##
 
 Reports/
+
+#delete cred
+
 credential
 credential/
