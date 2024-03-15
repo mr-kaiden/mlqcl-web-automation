@@ -40,4 +40,4 @@ build/
 
 Reports/
 
-dto//accountCredential.properties
+dto/accountCredential.properties
