@@ -35,6 +35,7 @@ public class TestExecutionUtils extends BaseClass {
             click (LoginPage.try_another_way_google, "another way option");
             verifyElementPresentAndClick(LoginPage.enter_back_up_codes_google, " Google Authenticator");
         }else{
+            scrollDownWEB();
             verifyElementPresentAndClick(LoginPage.enter_back_up_codes_google, " Google Authenticator");
         }
 

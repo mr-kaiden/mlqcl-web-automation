@@ -21,24 +21,240 @@ public class RenewTestSteps extends BaseClass  {
         waitTime(3000);
         verifyElementPresent ( LoginPage.Dashboard, "dashboard");
         waitTime(2000);
-        click(renewPage.renewMenuBtn,"Renew Menu Button");
-        if(verifyElementPresent(renewPage.renewRenewPage,"Header")){
-            click(renewPage.KebabBtn,"Button");
-            verifyElementPresentAndClick(renewPage.ptStatus,"Status");
-
-            verifyElementPresentAndClick(renewPage.selectBtn,"Select Button");
-
-            verifyElementPresentAndClick(renewPage.paymentMethodBtn,"Option");
-            click(renewPage.paymentMethodCash,"Option");
-
+        click(renewPage.objRenewNavigation,"Renew Menu Button");
+        if(verifyElementPresent(renewPage.objRenewLabel,"Header")){
+            click(renewPage.objKebabBtn,"Button");
+            verifyElementPresentAndClick(renewPage.objOpenStatus,"Status");
+            verifyElementPresentAndClick(renewPage.objSelectBtn,"Select Button");
+            verifyElementPresentAndClick(renewPage.objPaymentMethodBtn,"Option");
+            click(renewPage.objPaymentMethodCash,"Option");
             tenderAmount();
-            waitTime(5000);
-            click(renewPage.saveBtn,"Save Button");
-            click(renewPage.yesBtn,"Yes Button");
+            waitTime(2000);
+            click(renewPage.objSaveBtn,"Save Button");
+            click(renewPage.objYesBtn,"Yes Button");
             extentLoggerPass("", "Successfully To Validate Renew Transaction");
         }else{
             extentLoggerFail("", "Failed To Validate Renew Transaction");
         }
     }
-}
+    public void validateRenewOrReceipt() throws Exception{
+        HeaderChildNode("To verify Renew OR Receipt");
+        TestExecutionUtils.signInWithGoogle ( accountCredential.getproperty ( "email" ), accountCredential.getproperty ( "password" ));
+        TestExecutionUtils.signInQCL (accountCredential.getproperty ( "kpxusername" ), accountCredential.getproperty ( "kpxpassword" ));
+        click ( LoginPage.objQCLL, " QCL" );
+        click ( LoginPage.objcontinue, "continue " );
+        waitTime(3000);
+        verifyElementPresent ( LoginPage.Dashboard, "dashboard");
+        waitTime(2000);
+        click(renewPage.objRenewNavigation,"Renew Menu Button");
+        if(verifyElementPresent(renewPage.objRenewLabel,"Header")){
+            click(renewPage.objKebabBtn,"Button");
+            verifyElementPresentAndClick(renewPage.objOpenStatus,"Status");
+            verifyElementPresentAndClick(renewPage.objSelectBtn,"Select Button");
+            verifyElementPresentAndClick(renewPage.objPaymentMethodBtn,"Option");
+            click(renewPage.objPaymentMethodCash,"Option");
+            tenderAmount();
+            waitTime(2000);
+            click(renewPage.objSaveBtn,"Save Button");
+            click(renewPage.objYesBtn,"Yes Button");
+            clickBtn(renewPage.objPrintOR,"Print OR Receipt Button");
+            waitTime(2000);
+            clickBtn(renewPage.objPrintBtn,"Print Button");
+            extentLoggerPass("", "Successfully To Validate Renew OR Receipt");
+        }else{
+            extentLoggerFail("", "Failed To Validate Renew OR Receipt");
+        }
+    }
+    public void validateRenewReceipt() throws Exception{
+        HeaderChildNode("To verify Renew PT Receipt");
+        TestExecutionUtils.signInWithGoogle ( accountCredential.getproperty ( "email" ), accountCredential.getproperty ( "password" ));
+        TestExecutionUtils.signInQCL (accountCredential.getproperty ( "kpxusername" ), accountCredential.getproperty ( "kpxpassword" ));
+        click ( LoginPage.objQCLL, " QCL" );
+        click ( LoginPage.objcontinue, "continue " );
+        waitTime(3000);
+        verifyElementPresent ( LoginPage.Dashboard, "dashboard");
+        waitTime(2000);
+        click(renewPage.objRenewNavigation,"Renew Menu Button");
+        if(verifyElementPresent(renewPage.objRenewLabel,"Header")){
+            click(renewPage.objKebabBtn,"Button");
+            verifyElementPresentAndClick(renewPage.objOpenStatus,"Status");
+            verifyElementPresentAndClick(renewPage.objSelectBtn,"Select Button");
+            verifyElementPresentAndClick(renewPage.objPaymentMethodBtn,"Option");
+            click(renewPage.objPaymentMethodCash,"Option");
+            tenderAmount();
+            waitTime(2000);
+            click(renewPage.objSaveBtn,"Save Button");
+            click(renewPage.objYesBtn,"Yes Button");
+            clickBtn(renewPage.objPrintPT,"Print Receipt Button");
+            waitTime(2000);
+            clickBtn(renewPage.objPrintBtn,"Print Button");
 
+            extentLoggerPass("", "Successfully To Validate Renew Receipt");
+        }else{
+            extentLoggerFail("", "Failed To Validate Renew Receipt");
+
+        }
+    }
+    public void validatePaymentMethod() throws Exception{
+        HeaderChildNode("To verify Renew Payment Method");
+        TestExecutionUtils.signInWithGoogle ( accountCredential.getproperty ( "email" ), accountCredential.getproperty ( "password" ));
+        TestExecutionUtils.signInQCL (accountCredential.getproperty ( "kpxusername" ), accountCredential.getproperty ( "kpxpassword" ));
+        click ( LoginPage.objQCLL, " QCL" );
+        click ( LoginPage.objcontinue, "continue " );
+        waitTime(3000);
+        verifyElementPresent ( LoginPage.Dashboard, "dashboard");
+        waitTime(2000);
+        click(renewPage.objRenewNavigation,"Renew Menu Button");
+        if(verifyElementPresent(renewPage.objRenewLabel,"Header")){
+            click(renewPage.objKebabBtn,"Button");
+            verifyElementPresentAndClick(renewPage.objOpenStatus,"Status");
+            verifyElementPresentAndClick(renewPage.objSelectBtn,"Select Button");
+            verifyElementPresentAndClick(renewPage.objPaymentMethodBtn,"Option");
+            click(renewPage.objPaymentMethodCash,"Cash Option");
+
+            extentLoggerPass("", "Successfully To Validate Renew Payment Method");
+        }else{
+            extentLoggerFail("", "Failed To Validate Renew Payment Method");
+        }
+    }
+    public void validateItemsDataGrid() throws Exception{
+        HeaderChildNode("To verify Renew Items Data Grid");
+        TestExecutionUtils.signInWithGoogle ( accountCredential.getproperty ( "email" ), accountCredential.getproperty ( "password" ));
+        TestExecutionUtils.signInQCL (accountCredential.getproperty ( "kpxusername" ), accountCredential.getproperty ( "kpxpassword" ));
+        click ( LoginPage.objQCLL, " QCL" );
+        click ( LoginPage.objcontinue, "continue " );
+        waitTime(3000);
+        verifyElementPresent ( LoginPage.Dashboard, "dashboard");
+        waitTime(2000);
+        click(renewPage.objRenewNavigation,"Renew Menu Button");
+        if(verifyElementPresent(renewPage.objRenewLabel,"Header")){
+            click(renewPage.objKebabBtn,"Button");
+            verifyElementPresentAndClick(renewPage.objOpenStatus, "Status");
+            verifyElementPresentAndClick(renewPage.objSelectBtn,"Select Button");
+            verifyElementPresentAndClick(renewPage.objPaymentMethodBtn,"Option");
+            click(renewPage.objPaymentMethodCash,"Option");
+            clickBtn(renewPage.objItemsBtn,"Items Button");
+            clickBtn(renewPage.objEyesIcon,"Items Button");
+            verifyElementPresent(renewPage.objItemModal,"Item Details Modal");
+            clickBtn(renewPage.objCloseBtn,"Close Button");
+            tenderAmount();
+            click(renewPage.objSaveBtn, "Save Button");
+            click(renewPage.objYesBtn, "Yes Button");
+            extentLoggerPass("", "Successfully To Validate Renew Items Data Grid");
+        }else{
+            extentLoggerFail("", "Failed To Validate Renew Items Data Grid");
+        }
+    }
+
+    public void validateIfTenderInputFieldIsEnable() throws Exception {
+        HeaderChildNode("To verify if Tender Input Field is Enable");
+        TestExecutionUtils.signInWithGoogle(accountCredential.getproperty("email"), accountCredential.getproperty("password"));
+        TestExecutionUtils.signInQCL(accountCredential.getproperty("kpxusername"), accountCredential.getproperty("kpxpassword"));
+        click(LoginPage.objQCLL, " QCL");
+        click(LoginPage.objcontinue, "continue ");
+        waitTime(3000);
+        verifyElementPresent(LoginPage.Dashboard, "dashboard");
+        waitTime(2000);
+        click(renewPage.objRenewNavigation, "Renew Menu Button");
+        if (verifyElementPresent(renewPage.objRenewLabel, "Header")) {
+            click(renewPage.objKebabBtn, "Button");
+            verifyElementPresentAndClick(renewPage.objOpenStatus, "Status");
+            verifyElementPresentAndClick(renewPage.objSelectBtn, "Select Button");
+            verifyElementPresentAndClick(renewPage.objPaymentMethodBtn, "Option");
+            click(renewPage.objPaymentMethodCash, "Option");
+            clickBtn(renewPage.objItemsBtn, "Items Button");
+            clickBtn(renewPage.objEyesIcon, "Items Button");
+            verifyElementPresent(renewPage.objItemModal, "Item Details Modal");
+            clickBtn(renewPage.objCloseBtn, "Close Button");
+            tenderAmount();
+            extentLoggerPass("", "Successfully To Validate Tender Input Field is Enable");
+        } else {
+            extentLoggerFail("", "Failed To Validate Tender Input Field is Enable");
+        }
+    }
+
+    public void validateInvalidTenderAmount() throws Exception {
+        HeaderChildNode("To verify if Error Message for Invalid Tender Amount");
+        TestExecutionUtils.signInWithGoogle(accountCredential.getproperty("email"), accountCredential.getproperty("password"));
+        TestExecutionUtils.signInQCL(accountCredential.getproperty("kpxusername"), accountCredential.getproperty("kpxpassword"));
+        click(LoginPage.objQCLL, " QCL");
+        click(LoginPage.objcontinue, "continue ");
+        waitTime(3000);
+        verifyElementPresent(LoginPage.Dashboard, "dashboard");
+        waitTime(2000);
+        click(renewPage.objRenewNavigation, "Renew Menu Button");
+        if (verifyElementPresent(renewPage.objRenewLabel, "Header")) {
+            click(renewPage.objKebabBtn, "Button");
+            verifyElementPresentAndClick(renewPage.objOpenStatus, "Status");
+            verifyElementPresentAndClick(renewPage.objSelectBtn, "Select Button");
+            verifyElementPresentAndClick(renewPage.objPaymentMethodBtn, "Option");
+            click(renewPage.objPaymentMethodCash, "Option");
+            click(renewPage.objItemsBtn, "Items Button");
+            click(renewPage.objEyesIcon, "Items Button");
+            verifyElementPresent(renewPage.objItemModal,"Item Details Modal");
+            click(renewPage.objCloseBtn, "Close Button");
+            invalidTenderAmount();
+            click(renewPage.objSaveBtn,"Save Button");
+            verifyElementPresent(renewPage.objErrorMessage, "Error Message");
+            click(renewPage.objOkBtn,"Error Message Ok Button");
+            extentLoggerPass("", "Successfully To Validate Error Message for Invalid Tender Amount");
+        } else {
+            extentLoggerFail("", "Failed To Validate Error Message for Invalid Tender Amount");
+        }
+    }
+    public void validateNewRenewalTransaction() throws Exception {
+        HeaderChildNode("To verify New Renewal Transaction");
+        TestExecutionUtils.signInWithGoogle(accountCredential.getproperty("email"), accountCredential.getproperty("password"));
+        TestExecutionUtils.signInQCL(accountCredential.getproperty("kpxusername"), accountCredential.getproperty("kpxpassword"));
+        click(LoginPage.objQCLL, " QCL");
+        click(LoginPage.objcontinue, "continue ");
+        waitTime(3000);
+        verifyElementPresent(LoginPage.Dashboard, "dashboard");
+        waitTime(2000);
+        click(renewPage.objRenewNavigation, "Renew Menu Button");
+        if (verifyElementPresent(renewPage.objRenewLabel, "Header")) {
+            click(renewPage.objKebabBtn, "Button");
+            verifyElementPresentAndClick(renewPage.objOpenStatus, "Status");
+            verifyElementPresentAndClick(renewPage.objSelectBtn, "Select Button");
+            verifyElementPresentAndClick(renewPage.objPaymentMethodBtn, "Option");
+            click(renewPage.objPaymentMethodCash, "Option");
+            tenderAmount();
+            waitTime(2000);
+            click(renewPage.objSaveBtn,"Save Button");
+            click(renewPage.objYesBtn,"Yes Button");
+            waitTime(2000);
+            click(renewPage.objNewTransactionBtn,"New Button");
+            verifyElementPresent(renewPage.objNewFormModal,"Modal");
+            click(renewPage.objYesBtn,"Ok Button");
+            waitTime(2000);
+            extentLoggerPass("", "Successfully To Validate New Renewal Transaction");
+        } else {
+            extentLoggerFail("", "Failed To Validate Validate New Renewal Transaction");
+        }
+    }
+    public void validateSaveButtonIsDisable() throws Exception {
+        HeaderChildNode("To verify if Save Button is Disable if Pawn Ticket is Closed");
+        TestExecutionUtils.signInWithGoogle(accountCredential.getproperty("email"), accountCredential.getproperty("password"));
+        TestExecutionUtils.signInQCL(accountCredential.getproperty("kpxusername"), accountCredential.getproperty("kpxpassword"));
+        click(LoginPage.objQCLL, " QCL");
+        click(LoginPage.objcontinue, "continue ");
+        waitTime(3000);
+        verifyElementPresent(LoginPage.Dashboard, "dashboard");
+        waitTime(2000);
+        click(renewPage.objRenewNavigation, "Renew Menu Button");
+        if (verifyElementPresent(renewPage.objRenewLabel, "Header")) {
+            click(renewPage.objKebabBtn, "Button");
+            verifyElementPresentAndClick(renewPage.objCloseStatus, "Status");
+            verifyElementPresentAndClick(renewPage.objSelectBtn, "Select Button");
+            verifyElementPresentAndClick(renewPage.objPaymentMethodBtn, "Option");
+            click(renewPage.objPaymentMethodCash, "Option");
+            scrollDownWEB();
+            verifyElementIsDisabledWeb(renewPage.objSaveBtn,"Save Button");
+
+            extentLoggerPass("", "Successfully To Validate Save Button is Disable if Pawn Ticket is Closed");
+        } else {
+            extentLoggerFail("", "Failed To Validate Validate Save Button is Disable if Pawn Ticket is Closed");
+        }
+    }
+
+}
