@@ -49,9 +49,9 @@ public class BaseTest {
     public void accountCredentialReader(){
         if (osName.contains("mac") || osName.contains("linux")) {
             System.out.println(osName);
-            accountCredential = new PropertyFileReader ( ".//dto//accountCredential.properties" );
+            accountCredential = new PropertyFileReader ( ".//credential//accountCredential.properties" );
         } else {
-            accountCredential = new PropertyFileReader ( ".\\dto\\accountCredential.properties" );
+            accountCredential = new PropertyFileReader ( ".\\credential\\accountCredential.properties" );
 
         }
     }

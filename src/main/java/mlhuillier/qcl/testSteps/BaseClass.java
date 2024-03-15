@@ -33,7 +33,7 @@ public class BaseClass {
     }
 
     public void accountCredentialReader(){
-        accountCredential = new PropertyFileReader ( ".//dto//accountCredential.properties" );
+        accountCredential = new PropertyFileReader ( ".//credential//accountCredential.properties" );
     }
 
     //0-Param Constructor
