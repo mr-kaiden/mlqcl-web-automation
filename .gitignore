@@ -40,4 +40,7 @@ build/
 
 Reports/
 
-dto//accountCredential.properties
+#delete cred
+
+credential
+credential/
