@@ -30,8 +30,9 @@ public class RenewTestSteps extends BaseClass  {
             verifyElementPresentAndClick(renewPage.objPaymentMethodBtn, "Option");
             click(renewPage.objPaymentMethodCash, "Option");
             tenderAmount(renewPage.objTransactionsAmount, renewPage.objTenderAmount);
-            waitTime(2000);
+            waitTime(1000);
             click(renewPage.objSaveBtn, "Save Button");
+            waitTime(1000);
             String renewalHeader = getText(renewPage.objRenewalHeader);
             assertionValidation(renewal,renewalHeader);
             click(renewPage.objYesBtn, "Yes Button");
@@ -193,6 +194,7 @@ public class RenewTestSteps extends BaseClass  {
             click(renewPage.objCloseBtn,"Close Button");
             tenderAmount(renewPage.objTransactionsAmount, renewPage.objTenderAmount);
             click(renewPage.objSaveBtn, "Save Button");
+            waitTime(1000);
             String renewalHeader = getText(renewPage.objRenewalHeader);
             assertionValidation(renewal,renewalHeader);
             click(renewPage.objYesBtn, "Yes Button");
@@ -278,7 +280,6 @@ public class RenewTestSteps extends BaseClass  {
             click(renewPage.objPaymentMethodCash, "Option");
             click(renewPage.objRedeemBtn,"Redeem Button");
             tenderAmount(renewPage.objTransactionsAmount, renewPage.objTenderAmount);
-            waitTime(1000);
             click(renewPage.objSaveBtn,"Save Button");
             waitTime(1000);
             String renewalHeader = getText(renewPage.objRenewalHeader);
