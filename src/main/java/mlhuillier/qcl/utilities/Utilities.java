@@ -3883,31 +3883,32 @@ public class Utilities extends ExtentReporter {
         }
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public static void tenderAmount() throws Exception {
+    public static void tenderAmount(By transaction, By tender) throws Exception {
 
-        String transaction = String.valueOf(DisableFiled(renewPage.objTransactionsAmount));
+        String transactionAmount = String.valueOf(DisableFiled(transaction));
 
-        System.out.println("Transaction Amount is =" +"(" + transaction + ").");
+        System.out.println("Transaction Amount is =" +"(" + transactionAmount + ").");
 //        click(By.xpath(tenderField), "Tender Input Field");
-        waitTime(1000);
         scrollDownWEB();
-        click(renewPage.objTenderAmount,"Tender Input Field");
-        type(renewPage.objTenderAmount,transaction,"Tender Amount");
+        waitTime(1000);
+        click(tender,"Tender Input Field");
+        waitTime(1000);
+        type(tender,transactionAmount,"Tender Amount");
 
     }
-    public static void invalidTenderAmount() throws Exception {
+    public static void invalidTenderAmount(By transaction, By tender) throws Exception {
 
-        String transaction = String.valueOf(DisableFiled(renewPage.objTransactionsAmount));
+        String transactionAmount = String.valueOf(DisableFiled(transaction));
         float num = 1;
-        float transactionAmount = Float.parseFloat(transaction) - num ;
-        String invalidTender = Float.toString(transactionAmount);
+        float transactionInput = Float.parseFloat(transactionAmount) - num ;
+        String invalidTender = Float.toString(transactionInput);
 
         System.out.println("Transaction Amount is =" +"(" + invalidTender + ").");
 //        click(By.xpath(tenderField), "Tender Input Field");
         waitTime(1000);
         scrollDownWEB();
-        click(renewPage.objTenderAmount,"Tender Input Field");
-        type(renewPage.objTenderAmount,invalidTender,"Tender Amount");
+        click(tender,"Tender Input Field");
+        type(tender,invalidTender,"Tender Amount");
 
     }
 

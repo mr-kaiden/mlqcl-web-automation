@@ -11,29 +11,32 @@ import static mlhuillier.qcl.utilities.Utilities.*;
 import static mlhuillier.qcl.utilities.Utilities.click;
 
 public class RenewTestSteps extends BaseClass  {
+    String renewal = "Renewal Transaction";
 
     public void toValidateRenewTransaction() throws Exception {
         HeaderChildNode("To verify Renew Transaction");
-        TestExecutionUtils.signInWithGoogle ( accountCredential.getproperty ( "email" ), accountCredential.getproperty ( "password" ));
-        TestExecutionUtils.signInQCL (accountCredential.getproperty ( "kpxusername" ), accountCredential.getproperty ( "kpxpassword" ));
-        click ( LoginPage.objQCLL, " QCL" );
-        click ( LoginPage.objcontinue, "continue " );
+        TestExecutionUtils.signInWithGoogle(accountCredential.getproperty("email"), accountCredential.getproperty("password"));
+        TestExecutionUtils.signInQCL(accountCredential.getproperty("kpxusername"), accountCredential.getproperty("kpxpassword"));
+        click(LoginPage.objQCLL, " QCL");
+        click(LoginPage.objcontinue, "continue ");
         waitTime(3000);
-        verifyElementPresent ( LoginPage.Dashboard, "dashboard");
+        verifyElementPresent(LoginPage.Dashboard, "dashboard");
         waitTime(2000);
-        click(renewPage.objRenewNavigation,"Renew Menu Button");
-        if(verifyElementPresent(renewPage.objRenewLabel,"Header")){
-            click(renewPage.objKebabBtn,"Button");
-            verifyElementPresentAndClick(renewPage.objOpenStatus,"Status");
-            verifyElementPresentAndClick(renewPage.objSelectBtn,"Select Button");
-            verifyElementPresentAndClick(renewPage.objPaymentMethodBtn,"Option");
-            click(renewPage.objPaymentMethodCash,"Option");
-            tenderAmount();
+        click(renewPage.objRenewNavigation, "Renew Menu Button");
+        if (verifyElementPresent(renewPage.objRenewLabel, "Header")) {
+            click(renewPage.objKebabBtn, "Button");
+            verifyElementPresentAndClick(renewPage.objOpenStatus, "Status");
+            verifyElementPresentAndClick(renewPage.objSelectBtn, "Select Button");
+            verifyElementPresentAndClick(renewPage.objPaymentMethodBtn, "Option");
+            click(renewPage.objPaymentMethodCash, "Option");
+            tenderAmount(renewPage.objTransactionsAmount, renewPage.objTenderAmount);
             waitTime(2000);
-            click(renewPage.objSaveBtn,"Save Button");
-            click(renewPage.objYesBtn,"Yes Button");
+            click(renewPage.objSaveBtn, "Save Button");
+            String renewalHeader = getText(renewPage.objRenewalHeader);
+            assertionValidation(renewal,renewalHeader);
+            click(renewPage.objYesBtn, "Yes Button");
             extentLoggerPass("", "Successfully To Validate Renew Transaction");
-        }else{
+        } else {
             extentLoggerFail("", "Failed To Validate Renew Transaction");
         }
     }
@@ -48,18 +51,43 @@ public class RenewTestSteps extends BaseClass  {
         waitTime(2000);
         click(renewPage.objRenewNavigation,"Renew Menu Button");
         if(verifyElementPresent(renewPage.objRenewLabel,"Header")){
+            String branch = getText(renewPage.objBranch);
+            System.out.println(branch);
             click(renewPage.objKebabBtn,"Button");
             verifyElementPresentAndClick(renewPage.objOpenStatus,"Status");
             verifyElementPresentAndClick(renewPage.objSelectBtn,"Select Button");
+            String pawn = DisableFiled(renewPage.objPawnNumber);
+            System.out.println(pawn);
+            click(renewPage.objKebabBtn,"Button");
+            String firstName = DisableFiled(renewPage.objFirstName);
+            String lastName = DisableFiled(renewPage.objLastName);
+            String middleName = DisableFiled(renewPage.objMiddleName);
+            click(renewPage.objExitButton,"Exit Button");
             verifyElementPresentAndClick(renewPage.objPaymentMethodBtn,"Option");
             click(renewPage.objPaymentMethodCash,"Option");
-            tenderAmount();
+            String transaction = DisableFiled(renewPage.objTransactionsAmount);
+            System.out.println(transaction);
+            tenderAmount(renewPage.objTransactionsAmount, renewPage.objTenderAmount);
             waitTime(2000);
             click(renewPage.objSaveBtn,"Save Button");
+            waitTime(1000);
+            String renewalHeader = getText(renewPage.objRenewalHeader);
+            assertionValidation(renewal,renewalHeader);
             click(renewPage.objYesBtn,"Yes Button");
-            clickBtn(renewPage.objPrintOR,"Print OR Receipt Button");
             waitTime(2000);
-            clickBtn(renewPage.objPrintBtn,"Print Button");
+            click(renewPage.objPrintOR,"Print OR Receipt Button");
+            String ORBranch = getText(renewPage.objORBranch);
+            System.out.println(ORBranch);
+            String ORCustomer = getText(renewPage.objORCustomer);
+            System.out.println(ORCustomer);
+            String ORTransaction = getText(renewPage.objORTransaction);
+            System.out.println(ORTransaction);
+            String ORPawnNumber = getText(renewPage.objORPawnNumber);
+            assertionValidation(pawn,ORPawnNumber);
+            assertionValidation(branch,ORBranch);
+            assertionValidation(firstName + " " + middleName+ " " + lastName, ORCustomer);
+            assertionValidation(transaction,ORTransaction);
+            click(renewPage.objPrintBtn,"Print Button");
             extentLoggerPass("", "Successfully To Validate Renew OR Receipt");
         }else{
             extentLoggerFail("", "Failed To Validate Renew OR Receipt");
@@ -79,16 +107,41 @@ public class RenewTestSteps extends BaseClass  {
             click(renewPage.objKebabBtn,"Button");
             verifyElementPresentAndClick(renewPage.objOpenStatus,"Status");
             verifyElementPresentAndClick(renewPage.objSelectBtn,"Select Button");
+            String pawn = DisableFiled(renewPage.objPawnNumber);
+            System.out.println(pawn);
             verifyElementPresentAndClick(renewPage.objPaymentMethodBtn,"Option");
             click(renewPage.objPaymentMethodCash,"Option");
-            tenderAmount();
+            String principal = getText(renewPage.objPrincipal);
+            System.out.println(principal);
+            click(renewPage.objItemsBtn,"Items Button");
+            String description = getText(renewPage.objDiscription);
+            System.out.println(description);
+            String quantity = getText(renewPage.objQuantity);
+            System.out.println(quantity);
+            tenderAmount(renewPage.objTransactionsAmount, renewPage.objTenderAmount);
             waitTime(2000);
             click(renewPage.objSaveBtn,"Save Button");
+            waitTime(1000);
+            String renewalHeader = getText(renewPage.objRenewalHeader);
+            assertionValidation(renewal,renewalHeader);
             click(renewPage.objYesBtn,"Yes Button");
-            clickBtn(renewPage.objPrintPT,"Print Receipt Button");
             waitTime(2000);
-            clickBtn(renewPage.objPrintBtn,"Print Button");
-
+            click(renewPage.objPrintPT,"Print Receipt Button");
+            verifyElementPresent(renewPage.objPTPrincipal,"Principal Amount");
+            String PTPrincipal = getText(renewPage.objPTPrincipal);
+            System.out.println(PTPrincipal);
+            String PTPawnNumber = getText(renewPage.objPTPawnNumber);
+            System.out.println(PTPawnNumber);
+            getText(renewPage.objPTExtendedDate);
+            String PTQuantity = getText(renewPage.objPTQuantity);
+            System.out.println(PTQuantity);
+            String PTDescription = getText(renewPage.objDiscription);
+            System.out.println(PTDescription);
+            assertionValidation(principal, PTPrincipal);
+            assertionValidation(pawn, PTPawnNumber);
+            assertionValidation(quantity + ".00", PTQuantity);
+            assertionValidation(description, PTDescription);
+            click(renewPage.objPrintBtn, "Print Button");
             extentLoggerPass("", "Successfully To Validate Renew Receipt");
         }else{
             extentLoggerFail("", "Failed To Validate Renew Receipt");
@@ -133,12 +186,15 @@ public class RenewTestSteps extends BaseClass  {
             verifyElementPresentAndClick(renewPage.objSelectBtn,"Select Button");
             verifyElementPresentAndClick(renewPage.objPaymentMethodBtn,"Option");
             click(renewPage.objPaymentMethodCash,"Option");
-            clickBtn(renewPage.objItemsBtn,"Items Button");
-            clickBtn(renewPage.objEyesIcon,"Items Button");
+            click(renewPage.objRedeemBtn,"Redeem Button");
+            click(renewPage.objItemsBtn,"Items Button");
+            click(renewPage.objEyesIcon,"Items Button");
             verifyElementPresent(renewPage.objItemModal,"Item Details Modal");
-            clickBtn(renewPage.objCloseBtn,"Close Button");
-            tenderAmount();
+            click(renewPage.objCloseBtn,"Close Button");
+            tenderAmount(renewPage.objTransactionsAmount, renewPage.objTenderAmount);
             click(renewPage.objSaveBtn, "Save Button");
+            String renewalHeader = getText(renewPage.objRenewalHeader);
+            assertionValidation(renewal,renewalHeader);
             click(renewPage.objYesBtn, "Yes Button");
             extentLoggerPass("", "Successfully To Validate Renew Items Data Grid");
         }else{
@@ -162,11 +218,12 @@ public class RenewTestSteps extends BaseClass  {
             verifyElementPresentAndClick(renewPage.objSelectBtn, "Select Button");
             verifyElementPresentAndClick(renewPage.objPaymentMethodBtn, "Option");
             click(renewPage.objPaymentMethodCash, "Option");
+            click(renewPage.objRedeemBtn,"Redeem Button");
             clickBtn(renewPage.objItemsBtn, "Items Button");
             clickBtn(renewPage.objEyesIcon, "Items Button");
             verifyElementPresent(renewPage.objItemModal, "Item Details Modal");
             clickBtn(renewPage.objCloseBtn, "Close Button");
-            tenderAmount();
+            tenderAmount(renewPage.objTransactionsAmount, renewPage.objTenderAmount);
             extentLoggerPass("", "Successfully To Validate Tender Input Field is Enable");
         } else {
             extentLoggerFail("", "Failed To Validate Tender Input Field is Enable");
@@ -189,11 +246,12 @@ public class RenewTestSteps extends BaseClass  {
             verifyElementPresentAndClick(renewPage.objSelectBtn, "Select Button");
             verifyElementPresentAndClick(renewPage.objPaymentMethodBtn, "Option");
             click(renewPage.objPaymentMethodCash, "Option");
+            click(renewPage.objRedeemBtn,"Redeem Button");
             click(renewPage.objItemsBtn, "Items Button");
             click(renewPage.objEyesIcon, "Items Button");
             verifyElementPresent(renewPage.objItemModal,"Item Details Modal");
             click(renewPage.objCloseBtn, "Close Button");
-            invalidTenderAmount();
+            invalidTenderAmount(renewPage.objTransactionsAmount, renewPage.objTenderAmount);
             click(renewPage.objSaveBtn,"Save Button");
             verifyElementPresent(renewPage.objErrorMessage, "Error Message");
             click(renewPage.objOkBtn,"Error Message Ok Button");
@@ -218,9 +276,13 @@ public class RenewTestSteps extends BaseClass  {
             verifyElementPresentAndClick(renewPage.objSelectBtn, "Select Button");
             verifyElementPresentAndClick(renewPage.objPaymentMethodBtn, "Option");
             click(renewPage.objPaymentMethodCash, "Option");
-            tenderAmount();
-            waitTime(2000);
+            click(renewPage.objRedeemBtn,"Redeem Button");
+            tenderAmount(renewPage.objTransactionsAmount, renewPage.objTenderAmount);
+            waitTime(1000);
             click(renewPage.objSaveBtn,"Save Button");
+            waitTime(1000);
+            String renewalHeader = getText(renewPage.objRenewalHeader);
+            assertionValidation(renewal,renewalHeader);
             click(renewPage.objYesBtn,"Yes Button");
             waitTime(2000);
             click(renewPage.objNewTransactionBtn,"New Button");
@@ -248,6 +310,7 @@ public class RenewTestSteps extends BaseClass  {
             verifyElementPresentAndClick(renewPage.objSelectBtn, "Select Button");
             verifyElementPresentAndClick(renewPage.objPaymentMethodBtn, "Option");
             click(renewPage.objPaymentMethodCash, "Option");
+            click(renewPage.objRedeemBtn,"Redeem Button");
             scrollDownWEB();
             verifyElementIsDisabledWeb(renewPage.objSaveBtn,"Save Button");
 
