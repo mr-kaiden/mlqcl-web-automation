@@ -21,7 +21,7 @@ public class RenewTestScript extends BaseTest {
         RenewTestSteps.validateRenewReceipt();
 
     }
-//
+
     @Test(priority = 4, groups = "HappyPath")
     public void validatePaymentMethod() throws Exception {
         RenewTestSteps.validatePaymentMethod();
