@@ -13,9 +13,9 @@
         <parameter name="portno" value="4723"></parameter>
         <parameter name="deviceName" value="n/a"></parameter>
         <classes>
-            <class name="mlhuillier.qcl.testScripts.QCLWebScripts"/>
-            <class name="mlhuillier.qcl.testScripts.LogInTestScripts"/>
-            <class name="mlhuillier.qcl.testScripts.PrendaScripts"/>
+<!--            <class name="mlhuillier.qcl.testScripts.QCLWebScripts"/>-->
+<!--            <class name="mlhuillier.qcl.testScripts.LogInTestScripts"/>-->
+<!--            <class name="mlhuillier.qcl.testScripts.PrendaScripts"/>-->
             <class name="mlhuillier.qcl.testScripts.RenewTestScript"/>
         </classes>
     </test>

@@ -201,23 +201,23 @@ public class ExtentReporter implements ITestListener {
 
 	@Override
 	public synchronized void onTestFailure(ITestResult result) {
-		try {
-		if ((getDriver() != null) || (DriverManager.getAppiumDriver() != null)) {
-			try {
-				screencapture();
-			} catch (Exception e) {
-				e.printStackTrace();
+//		try {
+			if ((getDriver() != null) || (DriverManager.getAppiumDriver() != null)) {
+				try {
+					screencapture();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				childTest.get().log(Status.FAIL, result.getName() + " is FAILED ");
+				logger.info("::::::::::Test " + result.getName() + " FAILED::::::::::");
+				moduleFail.add(result.getName() + "," + "Fail");
+				totalFailedTest++;
 			}
-			childTest.get().log(Status.FAIL, result.getName() + " is FAILED ");
-			logger.info("::::::::::Test " + result.getName() + " FAILED::::::::::");
-			moduleFail.add(result.getName()+","+"Fail");
-			totalFailedTest++;
-		}
-
-	}finally {
-			logger.info("::::::::::Relaunching The App::::::::::");
-			Utilities.relaunch=true;
-		}
+//
+//		} finally {
+//			logger.info("::::::::::Relaunching The App::::::::::");
+//			Utilities.relaunch = true;
+//		}
 
 	}
 
