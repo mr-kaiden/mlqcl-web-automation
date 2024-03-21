@@ -167,7 +167,7 @@ public class ExtentReporter implements ITestListener {
 		if(handler.getproperty(testName).equals("Y")) {
 			DriverInstance.methodName = result.getName();
 			ExcelUpdate.ModuleName = result.getName();
-			logger.info(":::::::::Testasdfsdafasdfasdf " + result.getName() + " Started::::::::");
+			logger.info(":::::::::Test " + result.getName() + " Started::::::::");
 			totalTests++;
 			ExcelUpdate.passCounter = ExcelUpdate.failCounter = ExcelUpdate.warningCounter = moduleFailCount = 0;
 		}
@@ -201,23 +201,23 @@ public class ExtentReporter implements ITestListener {
 
 	@Override
 	public synchronized void onTestFailure(ITestResult result) {
-//		try {
-			if ((getDriver() != null) || (DriverManager.getAppiumDriver() != null)) {
-				try {
-					screencapture();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-				childTest.get().log(Status.FAIL, result.getName() + " is FAILED ");
-				logger.info("::::::::::Test " + result.getName() + " FAILED::::::::::");
-				moduleFail.add(result.getName() + "," + "Fail");
-				totalFailedTest++;
+		try {
+		if ((getDriver() != null) || (DriverManager.getAppiumDriver() != null)) {
+			try {
+				screencapture();
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
-//
-//		} finally {
-//			logger.info("::::::::::Relaunching The App::::::::::");
-//			Utilities.relaunch = true;
-//		}
+			childTest.get().log(Status.FAIL, result.getName() + " is FAILED ");
+			logger.info(":::adfasd:::::::Test " + result.getName() + " FAILED::::::::::");
+			moduleFail.add(result.getName()+","+"Fail");
+			totalFailedTest++;
+		}
+
+	}finally {
+			logger.info("::::::::::Relaunching The App::::::::::");
+			Utilities.relaunch=true;
+		}
 
 	}
 
