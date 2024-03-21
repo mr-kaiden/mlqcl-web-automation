@@ -2,6 +2,8 @@ package mlhuillier.qcl.testScripts;
 
 import com.aventstack.extentreports.ExtentTest;
 import mlhuillier.qcl.testSteps.*;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 import mlhuillier.qcl.utilities.driverInstance.AppiumServer;
 import mlhuillier.qcl.utilities.propertyfilereader.PropertyFileReader;
@@ -71,6 +73,7 @@ public class BaseTest {
         propertyFileReader();
         accountCredentialReader();
         softAssert = new SoftAssert();
+
     }
 
 
