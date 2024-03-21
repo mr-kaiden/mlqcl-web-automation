@@ -13,10 +13,24 @@ public class QCLWebScripts extends BaseTest{
 
     }
 
-    @Test(priority = 1, groups = "HappyPath")
+    @Test(priority = 1, groups = "Happy Path")
     public void toVerifyLukatModule() throws Exception{
         Lukat.toVerifyLukatModule();
     }
 
+    @Test(priority = 1, groups = "Happy Path")
+    public void toVerifyLukatTxnFunctionality() throws Exception{
+        Lukat.toVerifyLukatTxnFunctionality();
+    }
 
+
+    @Test(priority = 1, groups = "Happy Path")
+    public void toVerifyLukatOR() throws Exception{
+        Lukat.toVerifyLukatOR();
+    }
+
+    @Test(priority = 1, groups = "Test")
+    public void toVerifyFilterFunctionality() throws Exception{
+        Lukat.toVerfiyFilterFunctionality();
+    }
 }

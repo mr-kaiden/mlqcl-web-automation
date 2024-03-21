@@ -24,4 +24,5 @@ public class LogInTestScripts extends BaseTest{
         QCLWeb.toValidateTheLoginFunctionalityWithInvalidUsernamePassword();
 
     }
+
 }

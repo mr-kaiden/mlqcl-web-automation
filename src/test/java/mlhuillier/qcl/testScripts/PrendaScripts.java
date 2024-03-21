@@ -7,11 +7,11 @@ public class PrendaScripts extends BaseTest{
     public void toVerifyPrendaModule() throws Exception {
         PrendaTestSteps.toVerifyPrendaModule();
     }
-//
-//    @Test(priority = 2, groups = "Test")
-//    public void toVerifyPrendaTransaction() throws Exception {
-//        PrendaTestSteps.toVerifyPrendaTransaction();
-//    }
+
+    @Test(priority = 2, groups = "Test")
+    public void toVerifyPrendaTransaction() throws Exception {
+        PrendaTestSteps.toVerifyPrendaTransaction();
+    }
 
     @Test(priority = 3, groups = "HappyPath")
     public void toVerifyTheExistingPrendaTransaction() throws Exception {

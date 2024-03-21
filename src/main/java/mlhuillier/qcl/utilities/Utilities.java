@@ -1695,8 +1695,10 @@ public class Utilities extends ExtentReporter {
 	 * Function to scroll down
 	 */
 	public static void scrollDownWEB() {
-		js = (JavascriptExecutor) DriverManager.getDriver();
-		js.executeScript("window.scrollBy(0,250)", "");
+//		js = (JavascriptExecutor) DriverManager.getDriver();
+//		js.executeScript("window.scrollBy(0,250)", "");
+        Actions actions = new Actions(getWebDriver());
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
 	}
 
 	/**
@@ -3881,15 +3883,32 @@ public class Utilities extends ExtentReporter {
         }
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public static void tenderAmount() throws Exception {
+    public static void tenderAmount(By transaction, By tender) throws Exception {
 
-        String transaction = String.valueOf(DisableFiled(renewPage.transactionnAmount));
+        String transactionAmount = String.valueOf(DisableFiled(transaction));
 
-        System.out.println("Transaction Amount is =" +"(" + transaction + ").");
+        System.out.println("Transaction Amount is =" +"(" + transactionAmount + ").");
 //        click(By.xpath(tenderField), "Tender Input Field");
-        waitTime(2000);
-        click(renewPage.tenderAmount,"Tender Input Field");
-        type(renewPage.tenderAmount,transaction,"Tender Amount");
+        scrollDownWEB();
+        waitTime(1000);
+        click(tender,"Tender Input Field");
+        waitTime(1000);
+        type(tender,transactionAmount,"Tender Amount");
+
+    }
+    public static void invalidTenderAmount(By transaction, By tender) throws Exception {
+
+        String transactionAmount = String.valueOf(DisableFiled(transaction));
+        float num = 1;
+        float transactionInput = Float.parseFloat(transactionAmount) - num ;
+        String invalidTender = Float.toString(transactionInput);
+
+        System.out.println("Transaction Amount is =" +"(" + invalidTender + ").");
+//        click(By.xpath(tenderField), "Tender Input Field");
+        waitTime(1000);
+        scrollDownWEB();
+        click(tender,"Tender Input Field");
+        type(tender,invalidTender,"Tender Amount");
 
     }
 
