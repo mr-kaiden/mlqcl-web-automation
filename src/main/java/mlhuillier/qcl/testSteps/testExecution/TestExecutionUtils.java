@@ -3,15 +3,11 @@ package mlhuillier.qcl.testSteps.testExecution;
 import mlhuillier.qcl.pageObject.LoginPage;
 import mlhuillier.qcl.testSteps.BaseClass;
 import mlhuillier.qcl.utilities.TOTPGenerator;
-import org.openqa.selenium.WebDriver;
-
-import static mlhuillier.qcl.testSteps.BaseClass.accountCredential;
 import static mlhuillier.qcl.utilities.Utilities.*;
-import static mlhuillier.qcl.utilities.Utilities.verifyElementPresentAndClick;
+
 
 public class TestExecutionUtils extends BaseClass {
-    public static WebDriver driver = getWebDriver();
-    public static String originalWindowHandle = driver.getWindowHandle();
+//    public static String originalWindowHandle = getWebDriver().getWindowHandle();
 
 
     public static void  signInWithGoogle(String email, String password) throws Exception {
@@ -20,8 +16,8 @@ public class TestExecutionUtils extends BaseClass {
         verifyElementPresent(LoginPage.googleSign, "google sign in");
         click(LoginPage.googleSign, "google sign in btn");
         waitTime(2000);
-        String handle = originalWindowHandle;
-        driver.switchTo().window(driver.getWindowHandles().toArray(new String[0])[1]);
+//        String handle = originalWindowHandle;
+        getWebDriver().switchTo().window(getWebDriver().getWindowHandles().toArray(new String[0])[1]);
         waitTime(3000);
         verifyElementPresent(LoginPage.email_google, "email input");
         type(LoginPage.email_google, email, "email inputted");
@@ -31,14 +27,14 @@ public class TestExecutionUtils extends BaseClass {
         type(LoginPage.password_google, password, "password inputted");
         click(LoginPage.nextBtn_google, "next btn");
 //        scrollToBottomOfPageWEB ();
-        if(verifyElementPresent ( LoginPage.try_another_way_google, "another way option" )){
-            click (LoginPage.try_another_way_google, "another way option");
-            verifyElementPresent(LoginPage.enter_back_up_codes_google, " Google Authenticator");
-            click(LoginPage.enter_back_up_codes_google, " Google Authenticator");
-        }else{
-            verifyElementPresent(LoginPage.enter_back_up_codes_google, " Google Authenticator");
-            click(LoginPage.enter_back_up_codes_google, " Google Authenticator");
-        }
+//        if(verifyElementPresent ( LoginPage.try_another_way_google, "another way option" )){
+//            click (LoginPage.try_another_way_google, "another way option");
+//            verifyElementPresent(LoginPage.enter_back_up_codes_google, " Google Authenticator");
+//            click(LoginPage.enter_back_up_codes_google, " Google Authenticator");
+//        }else{
+//            verifyElementPresent(LoginPage.enter_back_up_codes_google, " Google Authenticator");
+//            click(LoginPage.enter_back_up_codes_google, " Google Authenticator");
+//        }
 
 //
 //
@@ -60,14 +56,14 @@ public class TestExecutionUtils extends BaseClass {
 
         verifyElementPresent(LoginPage.input_back_up_codes_google, "backup code input text");
         waitTime(2000);
-        driver.findElement(LoginPage.input_back_up_codes_google).sendKeys( TOTPGenerator.getTwoFactorCode());
+        getWebDriver().findElement(LoginPage.input_back_up_codes_google).sendKeys( TOTPGenerator.getTwoFactorCode());
         click(LoginPage.nextBtn_google, "next btn");
         waitTime(2000);
     }
 
     public static void signInQCL(String kpxusername, String kpxpassword) throws Exception {
-
-        driver.switchTo().window(originalWindowHandle);
+//        getWebDriver().switchTo().window(originalWindowHandle);
+        getWebDriver().switchTo().window(getWebDriver().getWindowHandles().toArray(new String[0])[0]);
         verifyElementPresent(LoginPage.LoginText, "Login Page Header");
         click(LoginPage.kpxusername, "usernamme");
         type(LoginPage.kpxusername, kpxusername, "username inputted");
@@ -77,7 +73,7 @@ public class TestExecutionUtils extends BaseClass {
     }
 
     public static void kpxusernameinput(String kpxusername) throws Exception {
-        driver.switchTo().window(originalWindowHandle);
+//        getWebDriver().switchTo().window(originalWindowHandle);
         verifyElementPresent(LoginPage.LoginText, "Login Page Header");
         click(LoginPage.kpxusername, "usernamme");
         type(LoginPage.kpxusername, kpxusername, "username inputted");

@@ -285,8 +285,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.11.0</version>
         <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
+          <source>16</source>
+          <target>16</target>
         </configuration>
       </plugin>
       <!-- Below plug-in is used to execute tests -->
@@ -306,9 +306,9 @@
           <groups>${groups}</groups>
           <suiteXmlFiles>
             <suiteXmlFile>src/test/resources/TestSuiteRunner/BaseTestSuiteRunner.xml</suiteXmlFile>
-<!--            <suiteXmlFile>src/test/resources/TestSuiteRunner/HappyPathSuiteRunner.xml</suiteXmlFile>-->
+            <suiteXmlFile>src/test/resources/TestSuiteRunner/HappyPathSuiteRunner.xml</suiteXmlFile>
             <suiteXmlFile>src/test/resources/TestSuiteRunner/PrendaTestSuiteRunner.xml</suiteXmlFile>
-<!--            <suiteXmlFile>src/test/resources/TestSuiteRunner/TestingSuiteRunner.xml</suiteXmlFile>-->
+            <suiteXmlFile>src/test/resources/TestSuiteRunner/TestingSuiteRunner.xml</suiteXmlFile>
           </suiteXmlFiles>
           <groups>${group}</groups>
 <!--          <properties>-->

@@ -3,11 +3,11 @@
     <Appenders>
         <Console name="ConsoleAppender" target="SYSTEM_OUT">
             <PatternLayout
-                    pattern="%d [%t] %-5level %logger{36} - %msg%n%throwable"/>
+                    pattern="%d [%t] %-5level QCL - %msg%n%throwable"/>
         </Console>
         <ReportPortalLog4j2Appender name="ReportPortalAppender">
             <PatternLayout
-                    pattern="%d [%t] %-5level %logger{36} - %msg%n%throwable"/>
+                    pattern="%d [%t] %-5level QCL - %msg%n%throwable"/>
         </ReportPortalLog4j2Appender>
     </Appenders>
     <Loggers>
@@ -19,19 +19,20 @@
     </Loggers>
 </Configuration>
 
-<!-- <?xml version="1.0" encoding="UTF-8"?>
-<configuration packages="com.epam.ta.reportportal.log4j.appender">
-   <properties>
-      <property name="pattern">[%d{HH:mm:ss}] %-5p (%F:%L) - %m%n</property>
-   </properties>
-   <appenders>
-      <ReportPortalLog4j2Appender name="ReportPortalAppender">
-         <PatternLayout pattern="${pattern}" />
-      </ReportPortalLog4j2Appender>
-   </appenders>
-   <loggers>
-      <root level="all">
-         <appender-ref ref="ReportPortalAppender"/>
-      </root>
-   </loggers>
-</configuration> -->
+
+        <!-- <?xml version="1.0" encoding="UTF-8"?>
+        <configuration packages="com.epam.ta.reportportal.log4j.appender">
+           <properties>
+              <property name="pattern">[%d{HH:mm:ss}] %-5p (%F:%L) - %m%n</property>
+           </properties>
+           <appenders>
+              <ReportPortalLog4j2Appender name="ReportPortalAppender">
+                 <PatternLayout pattern="${pattern}" />
+              </ReportPortalLog4j2Appender>
+           </appenders>
+           <loggers>
+              <root level="all">
+                 <appender-ref ref="ReportPortalAppender"/>
+              </root>
+           </loggers>
+        </configuration> -->

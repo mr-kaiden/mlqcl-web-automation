@@ -10,6 +10,7 @@ import mlhuillier.qcl.utilities.driverInstance.DriverInstance;
 import mlhuillier.qcl.utilities.driverInstance.DriverManager;
 import mlhuillier.qcl.utilities.propertyfilereader.PropertyFileReader;
 import io.appium.java_client.AppiumDriver;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -167,9 +168,10 @@ public class ExtentReporter implements ITestListener {
 		if(handler.getproperty(testName).equals("Y")) {
 			DriverInstance.methodName = result.getName();
 			ExcelUpdate.ModuleName = result.getName();
-			logger.info(":::::::::Testasdfsdafasdfasdf " + result.getName() + " Started::::::::");
+			logger.info(":::::::::Test " + result.getName() + " Started::::::::");
 			totalTests++;
 			ExcelUpdate.passCounter = ExcelUpdate.failCounter = ExcelUpdate.warningCounter = moduleFailCount = 0;
+
 		}
 		else {
 			logger.info("RunMode is :: No : "+ testName +" Test is Skipped");
@@ -209,7 +211,7 @@ public class ExtentReporter implements ITestListener {
 				e.printStackTrace();
 			}
 			childTest.get().log(Status.FAIL, result.getName() + " is FAILED ");
-			logger.info("::::::::::Test " + result.getName() + " FAILED::::::::::");
+			logger.info(":::adfasd:::::::Test " + result.getName() + " FAILED::::::::::");
 			moduleFail.add(result.getName()+","+"Fail");
 			totalFailedTest++;
 		}

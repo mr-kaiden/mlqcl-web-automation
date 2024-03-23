@@ -8,7 +8,7 @@ public class PrendaScripts extends BaseTest{
         PrendaTestSteps.toVerifyPrendaModule();
     }
 
-    @Test(priority = 2, groups = "Test")
+    @Test(priority = 2, groups = "HappyPath")
     public void toVerifyPrendaTransaction() throws Exception {
         PrendaTestSteps.toVerifyPrendaTransaction();
     }
@@ -48,7 +48,7 @@ public class PrendaScripts extends BaseTest{
         PrendaTestSteps.toVerifyByCalculatingTheTotalAppraisalAmountWithoutCRMAddOn();
     }
 
-    @Test(priority = 10, groups = "HappyPath")
+    @Test(priority = 10, groups = "Test")
     public void toVerifyByEnteringValidLoanValueAmount() throws Exception {
         PrendaTestSteps.toVerifyByEnteringValidLoanValueAmount();
     }
@@ -68,15 +68,7 @@ public class PrendaScripts extends BaseTest{
         PrendaTestSteps.toVerifyFilteringPrendaExistingPrendaTransaction();
     }
 
-    @Test(priority = 14, groups = "HappyPath")
-    public void functionName1() throws Exception {
-        PrendaTestSteps.functionName1();
-    }
 
-    @Test(priority = 15, groups = "HappyPath")
-    public void functionName2() throws Exception {
-        PrendaTestSteps.functionName2();
-    }
 
 
 }

@@ -51,16 +51,12 @@ public class BaseClass {
 
     //Tear Down Application
     public void tearDown() {
-        if (platform.equalsIgnoreCase("Web")) {
-            closeWebBrowser();
-        } else {
-            logger.info("Session ID: " + ((RemoteWebDriver) DriverManager.getAppiumDriver()).getSessionId());
-            ExtentReporter.extentLogger("", "Session ID: " + ((RemoteWebDriver) DriverManager.getAppiumDriver()).getSessionId());
+            logger.info("Session ID: " + ((RemoteWebDriver) DriverManager.getDriver ()).getSessionId ());
+            ExtentReporter.extentLogger("", "Session ID: " + ((RemoteWebDriver) DriverManager.getDriver ()).getSessionId ());
             logger.info("Session is quit");
             ExtentReporter.extentLogger("", "Session is quit");
             setScreenshotSource();
-            DriverManager.getAppiumDriver().quit();
-        }
+            DriverManager.getDriver ().quit ();
     }
     @BeforeTest
     public void beforeTest(){

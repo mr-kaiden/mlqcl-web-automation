@@ -38,8 +38,10 @@ public class RenewTestSteps extends BaseClass  {
             click(renewPage.objExitButton, "Exit Button");
             verifyElementPresentAndClick(renewPage.objPaymentMethodBtn, "Option");
             click(renewPage.objPaymentMethodCash, "Option");
+            scrollDownWEB();
             String principal = getText(renewPage.objPrincipal);
             System.out.println(principal);
+            waitTime(1000);
             click(renewPage.objItemsBtn, "Items Button");
             String description = getText(renewPage.objDiscription);
             System.out.println(description);
@@ -132,6 +134,7 @@ public class RenewTestSteps extends BaseClass  {
             click(renewPage.objYesBtn,"Yes Button");
             waitTime(2000);
             click(renewPage.objPrintOR,"Print OR Receipt Button");
+            waitTime(1000);
             String ORBranch = getText(renewPage.objORBranch);
             System.out.println(ORBranch);
             String ORCustomer = getText(renewPage.objORCustomer);
@@ -167,6 +170,7 @@ public class RenewTestSteps extends BaseClass  {
             System.out.println(pawn);
             verifyElementPresentAndClick(renewPage.objPaymentMethodBtn,"Option");
             click(renewPage.objPaymentMethodCash,"Option");
+            scrollDownWEB();
             String principal = getText(renewPage.objPrincipal);
             System.out.println(principal);
             click(renewPage.objItemsBtn,"Items Button");
@@ -183,6 +187,7 @@ public class RenewTestSteps extends BaseClass  {
             click(renewPage.objYesBtn,"Yes Button");
             waitTime(2000);
             click(renewPage.objPrintPT,"Print Receipt Button");
+            waitTime(1000);
             verifyElementPresent(renewPage.objPTPrincipal,"Principal Amount");
             String PTPrincipal = getText(renewPage.objPTPrincipal);
             System.out.println(PTPrincipal);
@@ -243,6 +248,7 @@ public class RenewTestSteps extends BaseClass  {
             verifyElementPresentAndClick(renewPage.objPaymentMethodBtn,"Option");
             click(renewPage.objPaymentMethodCash,"Option");
             click(renewPage.objRedeemBtn,"Redeem Button");
+            waitTime(1000);
             click(renewPage.objItemsBtn,"Items Button");
             click(renewPage.objEyesIcon,"Items Button");
             verifyElementPresent(renewPage.objItemModal,"Item Details Modal");
@@ -276,6 +282,7 @@ public class RenewTestSteps extends BaseClass  {
             verifyElementPresentAndClick(renewPage.objPaymentMethodBtn, "Option");
             click(renewPage.objPaymentMethodCash, "Option");
             click(renewPage.objRedeemBtn,"Redeem Button");
+            waitTime(1000);
             clickBtn(renewPage.objItemsBtn, "Items Button");
             clickBtn(renewPage.objEyesIcon, "Items Button");
             verifyElementPresent(renewPage.objItemModal, "Item Details Modal");
@@ -304,6 +311,7 @@ public class RenewTestSteps extends BaseClass  {
             verifyElementPresentAndClick(renewPage.objPaymentMethodBtn, "Option");
             click(renewPage.objPaymentMethodCash, "Option");
             click(renewPage.objRedeemBtn,"Redeem Button");
+            waitTime(1000);
             click(renewPage.objItemsBtn, "Items Button");
             click(renewPage.objEyesIcon, "Items Button");
             verifyElementPresent(renewPage.objItemModal,"Item Details Modal");
@@ -334,6 +342,7 @@ public class RenewTestSteps extends BaseClass  {
             verifyElementPresentAndClick(renewPage.objPaymentMethodBtn, "Option");
             click(renewPage.objPaymentMethodCash, "Option");
             click(renewPage.objRedeemBtn,"Redeem Button");
+            waitTime(1000);
             tenderAmount(renewPage.objTransactionsAmount, renewPage.objTenderAmount);
             click(renewPage.objSaveBtn,"Save Button");
             waitTime(1000);
@@ -367,6 +376,7 @@ public class RenewTestSteps extends BaseClass  {
             verifyElementPresentAndClick(renewPage.objPaymentMethodBtn, "Option");
             click(renewPage.objPaymentMethodCash, "Option");
             click(renewPage.objRedeemBtn,"Redeem Button");
+            waitTime(1000);
             scrollDownWEB();
             verifyElementIsDisabledWeb(renewPage.objSaveBtn,"Save Button");
 
