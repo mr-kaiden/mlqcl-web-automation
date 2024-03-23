@@ -10,6 +10,7 @@ import mlhuillier.qcl.utilities.driverInstance.DriverInstance;
 import mlhuillier.qcl.utilities.driverInstance.DriverManager;
 import mlhuillier.qcl.utilities.propertyfilereader.PropertyFileReader;
 import io.appium.java_client.AppiumDriver;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -170,6 +171,7 @@ public class ExtentReporter implements ITestListener {
 			logger.info(":::::::::Test " + result.getName() + " Started::::::::");
 			totalTests++;
 			ExcelUpdate.passCounter = ExcelUpdate.failCounter = ExcelUpdate.warningCounter = moduleFailCount = 0;
+
 		}
 		else {
 			logger.info("RunMode is :: No : "+ testName +" Test is Skipped");

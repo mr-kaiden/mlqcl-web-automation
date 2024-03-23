@@ -15,6 +15,8 @@ public class LoginPage {
         public static By email_google = By.xpath("//*[@id='identifierId']");
         public static By nextBtn_google = By.xpath("//*[contains(text(), 'Next')]");
         public static By password_google = By.xpath("//*[@type='password']");
+        public static By obj_2StepsVerificatoin = By.xpath("//span[contains(text(), '2-Step Verification')]");
+
         public static By try_another_way_google = By.xpath("//span[contains(text(), 'Try another way')]");
         public static By enter_back_up_codes_google = By.xpath("//*[contains(text(), 'Google Authenticator')]");
         public static By input_back_up_codes_google = By.xpath("//*[@type= 'tel']");
