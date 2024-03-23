@@ -955,7 +955,7 @@ public class PrendaTestSteps extends BaseClass{
         click ( PrendaPage.obj_modal_select_btn, " select button" );
         logger.info ( "Can filter existing prenda transactinon" );
         extentLoggerPass ( "", "To verify filtering prenda existing prenda transaction validated" );
-
     }
+
 
 }

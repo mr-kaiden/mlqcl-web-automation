@@ -13,18 +13,18 @@ public class QCLWebScripts extends BaseTest{
 
     }
 
-    @Test(priority = 1, groups = "Happy Path")
+    @Test(priority = 1, groups = "HappyPath")
     public void toVerifyLukatModule() throws Exception{
         Lukat.toVerifyLukatModule();
     }
 
-    @Test(priority = 1, groups = "Happy Path")
+    @Test(priority = 1, groups = "HappyPath")
     public void toVerifyLukatTxnFunctionality() throws Exception{
         Lukat.toVerifyLukatTxnFunctionality();
     }
 
 
-    @Test(priority = 1, groups = "Happy Path")
+    @Test(priority = 1, groups = "HappyPath")
     public void toVerifyLukatOR() throws Exception{
         Lukat.toVerifyLukatOR();
     }
