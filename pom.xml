@@ -306,9 +306,9 @@
           <groups>${groups}</groups>
           <suiteXmlFiles>
             <suiteXmlFile>src/test/resources/TestSuiteRunner/BaseTestSuiteRunner.xml</suiteXmlFile>
-<!--            <suiteXmlFile>src/test/resources/TestSuiteRunner/HappyPathSuiteRunner.xml</suiteXmlFile>-->
-<!--            <suiteXmlFile>src/test/resources/TestSuiteRunner/PrendaTestSuiteRunner.xml</suiteXmlFile>-->
-<!--            <suiteXmlFile>src/test/resources/TestSuiteRunner/TestingSuiteRunner.xml</suiteXmlFile>-->
+            <suiteXmlFile>src/test/resources/TestSuiteRunner/HappyPathSuiteRunner.xml</suiteXmlFile>
+            <suiteXmlFile>src/test/resources/TestSuiteRunner/PrendaTestSuiteRunner.xml</suiteXmlFile>
+            <suiteXmlFile>src/test/resources/TestSuiteRunner/TestingSuiteRunner.xml</suiteXmlFile>
           </suiteXmlFiles>
           <groups>${group}</groups>
 <!--          <properties>-->
