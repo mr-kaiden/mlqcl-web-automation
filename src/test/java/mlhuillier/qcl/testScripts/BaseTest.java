@@ -30,6 +30,8 @@ public class BaseTest {
 
     protected TestExecutionUtils TestExecutionUtils;
 
+    protected ReappraisalTestSteps ReappraisalTestSteps;
+
     public static ExtentTest testLogger;
     AppiumServer server = new AppiumServer();
     protected static LoggingUtils logger = new LoggingUtils();

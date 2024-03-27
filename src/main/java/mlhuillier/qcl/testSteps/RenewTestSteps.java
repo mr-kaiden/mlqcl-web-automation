@@ -43,7 +43,7 @@ public class RenewTestSteps extends BaseClass  {
             System.out.println(principal);
             waitTime(1000);
             click(renewPage.objItemsBtn, "Items Button");
-            String description = getText(renewPage.objDiscription);
+            String description = getText(renewPage.objDescription);
             System.out.println(description);
             String quantity = getText(renewPage.objQuantity);
             System.out.println(quantity);
@@ -73,7 +73,6 @@ public class RenewTestSteps extends BaseClass  {
             assertionValidation(transaction, ORTransaction);
             waitTime(3000);
             click(renewPage.objExitButton, "Exit button");
-
             ///////// PT Receipt//////////////
             click(renewPage.objPrintPT, "Print Receipt Button");
             waitTime(1000);
@@ -85,7 +84,7 @@ public class RenewTestSteps extends BaseClass  {
             System.out.println(getText(renewPage.objPTExtendedDate));
             String PTQuantity = getText(renewPage.objPTQuantity);
             System.out.println(PTQuantity);
-            String PTDescription = getText(renewPage.objDiscription);
+            String PTDescription = getText(renewPage.objPTDescription);
             System.out.println(PTDescription);
             assertionValidation(principal, PTPrincipal);
             assertionValidation(pawn, PTPawnNumber);
@@ -174,7 +173,7 @@ public class RenewTestSteps extends BaseClass  {
             String principal = getText(renewPage.objPrincipal);
             System.out.println(principal);
             click(renewPage.objItemsBtn,"Items Button");
-            String description = getText(renewPage.objDiscription);
+            String description = getText(renewPage.objDescription);
             System.out.println(description);
             String quantity = getText(renewPage.objQuantity);
             System.out.println(quantity);
@@ -196,7 +195,7 @@ public class RenewTestSteps extends BaseClass  {
             getText(renewPage.objPTExtendedDate);
             String PTQuantity = getText(renewPage.objPTQuantity);
             System.out.println(PTQuantity);
-            String PTDescription = getText(renewPage.objDiscription);
+            String PTDescription = getText(renewPage.objDescription);
             System.out.println(PTDescription);
             assertionValidation(principal, PTPrincipal);
             assertionValidation(pawn, PTPawnNumber);

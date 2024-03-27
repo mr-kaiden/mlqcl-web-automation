@@ -52,11 +52,11 @@ public static By objRedeemBtn = By.xpath("//*[@class='bg-buttonBgBlue text-butto
     public static By objPTPawnNumber = By.xpath("//*[@class='text-right right-0 top-16 absolute']/p/strong");
     public static By objPTPrincipal = By.xpath("//*[@class='flex flex-row gap-3 items-end absolute left-0 top-10']");
     public static By objPTQuantity = By.xpath("(//*[@class='border-b border-t border-black text-left']/child::td)[1]");
-    public static By objPTDiscription = By.xpath("(//*[@class='border-b border-t border-black text-left']/child::td)[2]");
+    public static By objPTDescription = By.xpath("(//*[@class='border-b border-t border-black text-left']/child::td)[2]");
     public static By objPTExtendedDate = By.xpath("(//*[@class='border-b border-black focus:outline-none bg-transparent'])[2]");
 
     public static By objPrincipal = By.xpath("(//*[@class='ant-table-row ant-table-row-level-0']/child::td)[2]");
-    public static By objDiscription = By.xpath("(//*[@class='ant-table-row ant-table-row-level-0']/child::td)[3]");
+    public static By objDescription = By.xpath("(//*[@class='ant-table-row ant-table-row-level-0']/child::td)[3]");
     public static By objQuantity = By.xpath("(//*[@class='ant-table-row ant-table-row-level-0']/child::td)[5]");
 
 

@@ -1,6 +1,5 @@
 package mlhuillier.qcl.utilities;
 
-import mlhuillier.qcl.pageObject.renew.renewPage;
 import mlhuillier.qcl.utilities.driverInstance.DriverInstance;
 import mlhuillier.qcl.utilities.driverInstance.DriverManager;
 import com.google.common.collect.Ordering;
@@ -3932,6 +3931,35 @@ public class Utilities extends ExtentReporter {
             return value;
         }
 
+    }
+
+    public static void removeSign(By transaction, By tender) throws Exception {
+        String transactionAmount = String.valueOf(DisableFiled(transaction));
+        transactionAmount = transactionAmount.replace("-", "");
+        waitTime(1000);
+//        String newTenderAmount = getText(By.xpath(transactionAmount));
+        System.out.println("Transaction Amount is = (" + transactionAmount + ").");
+        waitTime(1000);
+        scrollDownWEB();
+        click(tender, "Tender Input Field");
+        waitTime(1000);
+        type(tender, transactionAmount, "Tender Amount");
+    }
+    public static void inputNewLoan(By Principal, By Loan) throws Exception {
+        String transactionAmount = getText(Principal);
+        System.out.println(transactionAmount);
+        waitTime(2000);
+//        transactionAmount = transactionAmount.replace(",", "");
+        float num = 100;
+        float transactionInput = Float.parseFloat(transactionAmount) - num ;
+        System.out.println(transactionInput);
+        waitTime(2000);
+        String newLoan = String.valueOf(transactionInput);
+        System.out.println("Transaction Amount is = (" + newLoan + ").");
+        waitTime(1000);
+        click(Loan, "New Loan Input Field");
+        waitTime(1000);
+        type(Loan, newLoan, "New Loan Amount");
     }
 
 }
