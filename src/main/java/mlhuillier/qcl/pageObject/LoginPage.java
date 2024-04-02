@@ -35,7 +35,7 @@ public class LoginPage {
 
         public static By objcontinue =  By.xpath ( "//*[@id='__next']//span" );
 
-        public static By objprendadetails = By.xpath ( "//*[@id='headlessui-disclosure-button-:rk:']/span" );
+        public static By objprendadetails = By.xpath ( "//*[@class='w-full center-row-between bg-secondaryBg rounded-t-md p-4 text-xl font-semibold text-mainDark']");
         public static By objbranchdetail =  By.xpath ( "//*[contains(text(), 'Branch: ')]" );
         public static By objContactDetails =  By.xpath ( "//*[contains(text(), 'Customer Name')]" );
         public static By objDateGranted =  By.xpath ( "//*[contains(text(), 'Date Loan Granted')]" );
